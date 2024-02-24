@@ -14,7 +14,8 @@ function index() {
     pixelArray:[[]]
   })
   const [navigator, setNavigator] = useState({
-    dir: "/home/admia/DS/COLO/manifest-sFI3R7DS3069120899390652954/CT COLONOGRAPHY",
+    dir:process.env.NEXT_PUBLIC_startingDir,
+    // dir: "/home/admia/DS/COLO/manifest-sFI3R7DS3069120899390652954/CT COLONOGRAPHY",
     file: ""
   })
 
