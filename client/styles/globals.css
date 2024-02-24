@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.back {
+    @apply
+      pb-4
+      border-b-2 border-gray-200
+      flex items-center gap-5 
+      my-10 mx-auto 
+      max-w-5xl
+      text-yellow-900;
+  }
+
+  .dir {
+    @apply
+      pb-4
+      border-b-2 border-gray-200
+      items-center gap-5 
+      my-10 mx-auto 
+      max-w-5xl
+      text-gray-500;
+  }
+
+  .file {
+    @apply
+      pb-4
+      border-b-2 border-gray-200
+      flex items-center gap-5 
+      my-10 mx-auto 
+      max-w-5xl;
+  }
+
+.dicom{
+  @apply
+      /* pb-4 */
+      border-4 border-blue-600
+      flex items-center gap-5 
+      my-10 mx-auto 
+      max-w-5xl;
+}
