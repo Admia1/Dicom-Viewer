@@ -4,7 +4,6 @@ from dicom_engine import dcm_signle_file_open
 import os
 
 app = Flask(__name__)
-#
 CORS(app)
 
 
@@ -21,11 +20,11 @@ def navigate():
 
     dirs,files = [],[]
     for child in os.listdir(dir):
-        if os.path.isdir(os.path.join(dir, child)):
+        if os.path.isdir(os.path.join(dir,child)):
             dirs.append(child)
         else:
             files.append(child)
-    
+       
     if file_name!="":
         file_path = os.path.join(dir,file_name)
         if os.path.isfile(file_path):
@@ -40,7 +39,7 @@ def navigate():
     return jsonify({
         "dir":dirs,
         "file":files,
-        "fileData":file_data
+        "fileData":file_data,
     })
 
 
