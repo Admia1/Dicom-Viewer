@@ -24,7 +24,9 @@ def navigate():
             dirs.append(child)
         else:
             files.append(child)
-       
+    
+    files.sort()
+
     if file_name!="":
         file_path = os.path.join(dir,file_name)
         if os.path.isfile(file_path):

@@ -38,3 +38,11 @@
       my-10 mx-auto 
       max-w-5xl;
 }
+
+.mpr{
+  @apply
+      pb-4
+      border-8 border-red-200
+      flex items-center gap-5 
+       mx-auto 
+}
