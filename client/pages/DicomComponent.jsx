@@ -5,6 +5,9 @@ export default function DicomComponent(input) {
   const fileData = input.fileData
   const min_gray = 0
   const max_gray = 100
+  const pixelArray = fileData.pixelArray
+
+  const scale = 2
 
   const Canvas = props => {
     
@@ -32,21 +35,20 @@ export default function DicomComponent(input) {
           }
 
           context.fillStyle =`rgb(${color}, ${color}, ${color})`
-          context.fillRect(2*j, 2*i, 2, 2)
+          context.fillRect(scale*j, scale*i, scale, scale)
         })
       });
 
- 
-      // context.fillStyle = '#000000'
-      // context.fillRect(0, 0, context.canvas.width, context.canvas.height)
     }, [])
   
     return <canvas ref={canvasRef} {...props} />
   }
     
-    
+  const width = scale*pixelArray[0].length
+  const height = scale*pixelArray.length
+  
   return (
-    <Canvas id="myCanvas" width="1024" height="1024" className='dicom'>
+    <Canvas id="myCanvas" width={`${width}`} height={`${height}`} className='dicom'>
       Your browser does not support the HTML canvas tag.
     </Canvas>
   )
