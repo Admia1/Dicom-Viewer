@@ -9,11 +9,6 @@ function index() {
   const [tensor, setTensor] = useState([])
   const [files, setFiles] = useState([])
   const [dirs, setDirs] = useState([])
-  const [fileData, setFileData] = useState({
-    s1:0,
-    s2:0,
-    pixelArray:[[]]
-  })
   const [navigator, setNavigator] = useState({
     dir:process.env.NEXT_PUBLIC_startingDir,
     file: ""
@@ -63,11 +58,6 @@ function index() {
       .then((data)=>{
         setDirs(data.dir)
         setFiles(data.file)
-        setFileData({
-          s1:data.fileData.s1,
-          s2:data.fileData.s2,
-          pixelArray:data.fileData.pixel_array,
-        })
 
         const imageTensor = []
         getData(navigator.dir, data.file, 0, imageTensor)
