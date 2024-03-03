@@ -3,8 +3,12 @@ import React, { useEffect, useRef } from 'react'
 export default function DicomComponent(input) {
   const pixelArray = input.plane
   const shiftClick = input.shiftClick
-  const min_gray = 0
-  const max_gray = 100
+  const xCordinate = input.xCordinate
+  const yCordinate = input.yCordinate
+  const min_gray = input.min_gray
+  const max_gray = input.max_gray
+  const xColor = input.xColor
+  const yColor = input.yColor
 
   const scale = 1
 
@@ -37,6 +41,12 @@ export default function DicomComponent(input) {
           context.fillRect(scale*j, scale*i, scale, scale)
         })
       });
+
+      context.fillStyle = xColor
+      context.fillRect(xCordinate, 0, 1, scale*pixelArray.length)
+      context.fillStyle = yColor
+      context.fillRect(0, yCordinate, scale*pixelArray[0].length, 1)
+
 
     }, [])
   
