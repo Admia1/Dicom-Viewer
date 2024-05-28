@@ -42,10 +42,17 @@ export default function DicomComponent(input) {
         })
       });
 
+      // todo make smaller
+      const x_len = scale*pixelArray.length
+      const y_len =scale*pixelArray[0].length
+
+      const alfa = 20
+      
       context.fillStyle = xColor
-      context.fillRect(xCordinate, 0, 1, scale*pixelArray.length)
+      context.fillRect(xCordinate, yCordinate-alfa/2, 1, alfa)
+
       context.fillStyle = yColor
-      context.fillRect(0, yCordinate, scale*pixelArray[0].length, 1)
+      context.fillRect(xCordinate-alfa/2, yCordinate, alfa, 1)
 
 
     }, [])
